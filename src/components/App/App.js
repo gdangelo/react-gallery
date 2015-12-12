@@ -1,10 +1,10 @@
 var React = require('react');
-var Hello = require('../Hello/Hello');
+var GalleryItem = require('../GalleryItem/GalleryItem');
 
 var s = require('./App.scss');
 
 module.exports = React.createClass({
   render: function () {
-    return <Hello name="Greg" />;
+    return <GalleryItem />;
   }
 });

@@ -1,0 +1,34 @@
+@import '../variables.scss';
+
+/*
+ * GalleryItem styles
+ * ========================================================================== */
+
+ .btn {
+   border: 2px solid $grey;
+   border-radius: 20px;
+   padding: 3px 20px;
+ }
+
+ .btn-primary {
+   background-color: white;
+   color: $grey-dark;
+   &:hover, &:focus, &.liked{
+     background-color: $red;
+     border-color: $red;
+     color: white;
+   }
+ }
+
+ .thumbnail {
+   border-radius: 8px;
+   padding: 12.5px;
+
+   .caption {
+     padding: 0;
+   }
+   img {
+     max-height: 214px;
+     width: 284px;
+   }
+ }
