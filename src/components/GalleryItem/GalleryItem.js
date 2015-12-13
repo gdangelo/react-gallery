@@ -7,8 +7,7 @@ module.exports = React.createClass({
     return {
       title: "Thumbnail label",
       subtitle: "Lorem ipsum",
-      image: "https://facebook.github.io/react/img/logo_og.png",
-      counts: "9"
+      image: "https://facebook.github.io/react/img/logo_og.png"
     };
   },
   getInitialState: function () {
@@ -26,17 +25,15 @@ module.exports = React.createClass({
   },
   render: function () {
     return (
-      <div className="row">
-        <div className="col-sm-6 col-md-4">
-          <div className="thumbnail">
-            <img src={this.props.image} alt={this.props.title} />
-            <div className="caption text-center">
-              <h3>{this.props.title}</h3>
-              <h4>{this.props.subtitle}</h4>
-              <a className={"btn btn-primary" + (this.state.liked ? " liked" : "")} onClick={this.handleIncrement}>
-                <span className="glyphicon glyphicon-heart"></span> {this.state.counts}
-              </a>
-            </div>
+      <div className="col-sm-6 col-md-4">
+        <div className="thumbnail">
+          <img src={this.props.image} alt={this.props.title} />
+          <div className="caption text-center">
+            <h4>{this.props.title}</h4>
+            <h5>{this.props.subtitle}</h5>
+            <a className={"btn btn-primary" + (this.state.liked ? " liked" : "")} onClick={this.handleIncrement}>
+              <span className="glyphicon glyphicon-heart"></span> {this.state.counts}
+            </a>
           </div>
         </div>
       </div>

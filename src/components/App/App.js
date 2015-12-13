@@ -1,10 +1,10 @@
 var React = require('react');
-var GalleryItem = require('../GalleryItem/GalleryItem');
+var Gallery = require('../Gallery/Gallery');
 
 var s = require('./App.scss');
 
 module.exports = React.createClass({
   render: function () {
-    return <GalleryItem />;
+    return <Gallery items={this.props.galleryItems} />;
   }
 });
