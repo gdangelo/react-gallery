@@ -32,8 +32,10 @@ module.exports = React.createClass({
             onMouseEnter={this.handleMouseEnter}
             onMouseLeave={this.handleMouseLeave}>
 
-            {this.state.hovering ? this.icons() : null}
-            <img src={this.props.image} alt={this.props.title} />
+            <a className="gallery" href={this.props.image} title={this.props.title}>
+              {this.state.hovering ? this.icons() : null}
+              <img src={this.props.image} alt={this.props.title} />
+            </a>
           </div>
           <div className="caption text-center">
             <h4>{this.props.title}</h4>

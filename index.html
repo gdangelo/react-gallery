@@ -3,12 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <title>React Starter</title>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/blueimp-gallery/css/blueimp-gallery.min.css">
   </head>
   <body>
     <div class="container"></div>
+    <div id='blueimp-gallery' class='blueimp-gallery blueimp-gallery-controls'>
+      <div class='slides'></div>
+      <h3 class='title'></h3>
+      <p class="description"></p>
+      <a class='prev'>‹</a>
+      <a class='next'>›</a>
+      <a class='close'>×</a>
+      <a class='play-pause'></a>
+      <ol class='indicator'></ol>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/blueimp-gallery/js/blueimp-gallery.min.js"></script>
 
     <script type="text/javascript" src="build/bundle.js" charset="utf-8"></script>
   </body>
