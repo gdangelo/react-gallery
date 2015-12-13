@@ -12,6 +12,7 @@ module.exports = React.createClass({
   },
   getInitialState: function () {
     return {
+      hovering: false,
       liked: this.props.liked || false,
       counts: (Math.round(Math.random() * 20) + 4)
     }
@@ -25,9 +26,15 @@ module.exports = React.createClass({
   },
   render: function () {
     return (
-      <div className="col-sm-6 col-md-4">
+      <div className="col-xs-6 col-sm-4">
         <div className="thumbnail">
-          <img src={this.props.image} alt={this.props.title} />
+          <div className="image-preview"
+            onMouseEnter={this.handleMouseEnter}
+            onMouseLeave={this.handleMouseLeave}>
+
+            {this.state.hovering ? this.icons() : null}
+            <img src={this.props.image} alt={this.props.title} />
+          </div>
           <div className="caption text-center">
             <h4>{this.props.title}</h4>
             <h5>{this.props.subtitle}</h5>
@@ -38,5 +45,14 @@ module.exports = React.createClass({
         </div>
       </div>
     );
+  },
+  icons: function () {
+    return <div className="overlay"><span className="glyphicon glyphicon-zoom-in"></span></div>;
+  },
+  handleMouseEnter: function () {
+    this.setState({hovering: true});
+  },
+  handleMouseLeave: function () {
+    this.setState({hovering: false});
   }
 });

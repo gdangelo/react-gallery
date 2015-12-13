@@ -13,7 +13,7 @@
  .btn-primary {
    background-color: white;
    color: $grey-dark;
-   &:hover, &:focus, &.liked{
+   &:hover, &:focus, &:active, &.liked {
      background-color: $red;
      border-color: $red;
      color: white;
@@ -24,15 +24,40 @@
    border-radius: 8px;
    padding: 12.5px;
 
+   .image-preview {
+      display: inline-block;
+      position: relative;
+      margin: 0 auto;
+      max-height: 215px;
+      img {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+      }
+      .overlay {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: black;
+         opacity: 0.7;
+         cursor: pointer;
+      }
+      .glyphicon-zoom-in {
+        font-size: 40px;
+        color: white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
    .caption {
      padding: 0;
      text-transform: uppercase;
      h5 {
        color: $grey-light;
      }
-   }
-   img {
-     height: 214px;
-     width: 284px;
    }
  }
