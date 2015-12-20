@@ -5,12 +5,17 @@
  * Base styles
  * ========================================================================== */
 
+ body {
+   background-color: $blue;
+ }
+
 html {
   color: #222;
   font-weight: 100;
   font-size: 1em; /* ~16px; */
   font-family: $font-family-base;
   line-height: 1.375; /* ~22px */
+  margin: 15px;
 }
 
 .container {
