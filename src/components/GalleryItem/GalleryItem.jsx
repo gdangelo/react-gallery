@@ -1,34 +1,42 @@
-var React = require('react');
+import React, { Component } from 'react';
+import s from './GalleryItem.scss';
 
-var s = require('./GalleryItem.scss');
+class GalleryItem extends Component {
 
-module.exports = React.createClass({
-  getDefaultProps: function () {
-    return {
-      title: "Thumbnail label",
-      subtitle: "Lorem ipsum",
-      image: "https://facebook.github.io/react/img/logo_og.png"
-    };
-  },
-  getInitialState: function () {
-    return {
-      hovering: false,
-      liked: this.props.liked || false,
-      counts: (Math.round(Math.random() * 20) + 4)
-    }
-  },
-  handleIncrement: function () {
+  constructor(props) {
+    super(props);
+    // Manually bind this method to the component instance...
+    this.handleIncrement = this.handleIncrement.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+  }
+
+  static defaultProps = {
+    title: "Camera",
+    subtitle: "Lorem ipsum",
+    image: "https://cloud.githubusercontent.com/assets/4352286/11920432/f0aaff34-a76f-11e5-8456-a5d78b089233.jpg"
+  }
+
+  state = {
+    hovering: false,
+    liked: this.props.liked || false,
+    counts: (Math.round(Math.random() * 20) + 4)
+  }
+
+  handleIncrement() {
     if(this.state.liked) return;
     this.setState({
       liked: true,
       counts: this.state.counts+1
     });
-  },
-  render: function () {
+  }
+
+  render() {
     return (
       <div className="col-xs-6 col-sm-4">
         <div className="thumbnail">
-          <div className="image-preview"
+          <div
+            className="image-preview"
             onMouseEnter={this.handleMouseEnter}
             onMouseLeave={this.handleMouseLeave}>
 
@@ -47,14 +55,20 @@ module.exports = React.createClass({
         </div>
       </div>
     );
-  },
-  icons: function () {
+  }
+
+  icons() {
     return <div className="overlay"><span className="glyphicon glyphicon-zoom-in"></span></div>;
-  },
-  handleMouseEnter: function () {
+  }
+
+  handleMouseEnter() {
     this.setState({hovering: true});
-  },
-  handleMouseLeave: function () {
+  }
+
+  handleMouseLeave () {
     this.setState({hovering: false});
   }
-});
+
+};
+
+export default GalleryItem;
